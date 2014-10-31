@@ -2,6 +2,7 @@ var gulp        = require('gulp');
 var plumber     = require('gulp-plumber');
 var path        = require('path');
 var jade        = require('gulp-jade');
+var affected    = require('gulp-jade-find-affected');
 var sass        = require('gulp-sass');
 var browserSync = require('browser-sync');
 var reload      = browserSync.reload;
@@ -45,6 +46,7 @@ gulp.task('jade', function() {
   var YOUR_LOCALS = {};
 
   gulp.src(paths.jade)
+    .pipe(affected())
     .pipe(plumber({errorHandler: notify.onError({
       "title": "OINKOINK",
       "subtitle": "JADE BUG",
