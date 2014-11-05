@@ -10,6 +10,7 @@ var sourcemaps   = require('gulp-sourcemaps');
 var notify       = require("gulp-notify");
 var path         = require('path');
 
+var csslint      = require('gulp-csslint');
 var config       = require('../config');
 
 // /**

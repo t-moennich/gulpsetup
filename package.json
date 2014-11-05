@@ -28,7 +28,8 @@
     "require-dir": "^0.1.0",
     "gulp-sourcemaps": "~1.2.7",
     "gulp-autoprefixer": "~1.0.1",
-    "gulp-filter": "~1.0.2"
+    "gulp-filter": "~1.0.2",
+    "gulp-csslint": "~0.1.5"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

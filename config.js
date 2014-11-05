@@ -15,7 +15,6 @@ if (fs.existsSync('../config.js')){
   localConfig = require('../config')
 }
 
-console.log(localConfig)
 
 module.exports = {
 
