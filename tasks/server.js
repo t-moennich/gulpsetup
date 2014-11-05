@@ -1,23 +1,12 @@
 var gulp        = require('gulp');
 var browserSync = require('browser-sync');
+var reload      = browserSync.reload;
 var livereload  = require('gulp-livereload');
 
 var config      = require('../config').server
 
 gulp.task('browser-sync', function() {
-  browserSync({
-    server: {
-        baseDir: paths.dev.base
-    },
-
-    notify: false,
-    // watchOptions: {
-    //   debounceDelay: 0,
-    //   interval: 1
-    // },
-
-    open: false
-  });
+  browserSync(config.development);
 });
 
 gulp.task('default', ['browser-sync'], function () {
