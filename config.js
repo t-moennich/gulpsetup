@@ -1,11 +1,26 @@
-var src               = '../dev'
-var production        = '../app';
-var build             = '../build';
+var path            = require('path');
+var fs              = require('fs');
+
+var src             = '../dev'
+var production      = '../app';
+var build           = '../build';
+
 
 var developmentAssets = production + '/assets';
 var productionAssets  = '../build/production/assets';
 
+var localConfig = {}
+
+if (fs.existsSync('../config.js')){
+  localConfig = require('../config')
+}
+
+console.log(localConfig)
+
 module.exports = {
+
+
+
   server: {
     livereload: 35728,
 
@@ -33,7 +48,7 @@ module.exports = {
       compass: false,
       bundleExec: false,
       sourcemap: true,
-      sourcemapPath: src + '/sass'
+      sourcemapPath: './maps'
     }
-},
+  }
 }

@@ -40,7 +40,7 @@ var config       = require('../config');
 gulp.task('scss', function () {
   var sassConfig = config.sass.options;
 
-  sassConfig.onError = browserSync.notify;
+  //sassConfig.onError = browserSync.notify;
 
   // Don’t write sourcemaps of sourcemaps
   var filter = gulpFilter(['*.css', '!*.map']);
@@ -58,7 +58,7 @@ gulp.task('scss', function () {
       }))
       .pipe( sourcemaps.init() )
         .pipe( sass() )
-      .pipe(sourcemaps.write('./maps'))
+      .pipe(sourcemaps.write( sassConfig.sourcemapPath ) )
       .pipe( gulp.dest( config.sass.dest ) )
       .pipe(reload( {stream:true} ) );
 
