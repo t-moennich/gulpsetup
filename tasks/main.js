@@ -5,11 +5,15 @@ var jade        = require('gulp-jade');
 var affected    = require('gulp-jade-find-affected');
 var sass        = require('gulp-sass');
 
+var livereload  = require('gulp-livereload');
 
 var watch       = require('gulp-watch');
 var notify      = require("gulp-notify");
 var connect     = require('gulp-connect');
 var newer       = require('gulp-newer');
+
+var config      = require('../config');
+
 
 
 var paths = {
@@ -23,9 +27,11 @@ var paths = {
 
 
 
+
 gulp.task('jade', function() {
   var YOUR_LOCALS = {
-    debug: true
+    debug: true,
+    livereload: config.server.livereload
   };
 
   gulp.src(paths.jade)
@@ -49,27 +55,7 @@ gulp.task('jade', function() {
     } ) )
 
     .pipe( gulp.dest( paths.dev.base) )
-    .pipe( livereload( { auto: false } ) );
-
-});
-
-
-
-gulp.task('scss', function () {
-   gulp.src( paths.sass )
-      .pipe(plumber({errorHandler: notify.onError({
-        "title": "OINKOINK",
-        "subtitle": "SCSS Problem",
-        "message": "Error: <%= error.message %>",
-        "sound": "oink", // case sensitive
-        "icon": path.join(__dirname, "gulp.png"), // case sensitive
-        "onLast": true,
-        "wait": false
-      })
-      }))
-      .pipe( sass() )
-      .pipe( gulp.dest( paths.dev.styles ) )
-      .pipe(reload( {stream:true} ) );
+    .pipe( livereload( config.server.livereload, { auto: false } ) );
 
 });
 
@@ -77,5 +63,3 @@ gulp.task('scss', function () {
 
 
 //gulp.task('default', ['watch']);
-gulp.task('dev', ['connect'])
-gulp.task('styles', ['scss'])

@@ -25,7 +25,10 @@
     "gulp-plumber": "~0.6.6",
     "gulp-sass": "~1.0.0",
     "gulp-watch": "~1.0.7",
-    "require-dir": "^0.1.0"
+    "require-dir": "^0.1.0",
+    "gulp-sourcemaps": "~1.2.7",
+    "gulp-autoprefixer": "~1.0.1",
+    "gulp-filter": "~1.0.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

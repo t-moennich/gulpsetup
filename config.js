@@ -1,16 +1,17 @@
-var src               = '../app';
+var src               = '../dev'
+var production        = '../app';
 var build             = '../build';
-var development       = '../build/development';
-var production        = '../build/production';
-var srcAssets         = '../app/_assets';
-var developmentAssets = '../app/assets';
+
+var developmentAssets = production + '/assets';
 var productionAssets  = '../build/production/assets';
 
 module.exports = {
   server: {
+    livereload: 35728,
+
     development: {
       server: {
-        baseDir: [src]
+        baseDir: [production]
       },
       port    : 9999,
       open    : false,
@@ -23,4 +24,16 @@ module.exports = {
       ]
     }
   }
-};
+
+  ,sass: {
+    src:  src + '/sass/*.{sass,scss}',
+    dest: developmentAssets + '/css',
+    options: {
+      noCache: true,
+      compass: false,
+      bundleExec: false,
+      sourcemap: true,
+      sourcemapPath: src + '/sass'
+    }
+},
+}
