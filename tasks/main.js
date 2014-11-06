@@ -11,9 +11,9 @@ var connect     = require('gulp-connect');
 var newer       = require('gulp-newer');
 
 var config      = require('../config');
+var spawn       = require('child_process').spawn;
 
-
-
+// http://www.google.de
 
 var paths = {
   sass: '../dev/sass/*.scss',
@@ -23,8 +23,6 @@ var paths = {
     styles: '../app/css'
   }
 };
-
-
 
 
 gulp.task('jade', function() {
