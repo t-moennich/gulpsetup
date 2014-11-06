@@ -1,5 +1,6 @@
 var path            = require('path');
 var fs              = require('fs');
+var merge           = require('merge');
 
 var src             = '../dev'
 var production      = '../app';
@@ -9,17 +10,10 @@ var build           = '../build';
 var developmentAssets = production + '/assets';
 var productionAssets  = '../build/production/assets';
 
-var localConfig = {}
-
-if (fs.existsSync('../config.js')){
-  localConfig = require('../config')
-}
+var localConfig;
 
 
-module.exports = {
-
-
-
+var originalConfig = {
   server: {
     livereload: 35728,
 
@@ -31,10 +25,10 @@ module.exports = {
       open    : false,
       notify  : false,
       files: [
-        developmentAssets + '/css/*.css',
-        developmentAssets + '/js/*.js',
-        developmentAssets + '/images/**',
-        developmentAssets + '/fonts/*'
+      developmentAssets + '/css/*.css',
+      developmentAssets + '/js/*.js',
+      developmentAssets + '/images/**',
+      developmentAssets + '/fonts/*'
       ]
     }
   }
@@ -50,4 +44,15 @@ module.exports = {
       sourcemapPath: './maps'
     }
   }
+}
+
+
+
+
+
+if (fs.existsSync('../config.js')){
+  localConfig = require('../config')
+  module.exports = merge.recursive(true, originalConfig, localConfig )
+}else{
+  module.exports = originalConfig;
 }

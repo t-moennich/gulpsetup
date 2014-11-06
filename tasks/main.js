@@ -16,6 +16,7 @@ var config      = require('../config');
 
 
 
+
 var paths = {
   sass: '../dev/sass/*.scss',
   jade: '../dev/jade/*.jade',
@@ -34,6 +35,7 @@ gulp.task('jade', function() {
     livereload: config.server.livereload
   };
 
+
   gulp.src(paths.jade)
 
     .pipe( newer( paths.dev.base ) )
@@ -44,7 +46,7 @@ gulp.task('jade', function() {
       "subtitle": "JADE BUG",
       "message": "Error: <%= error.message %>",
       "sound": "oink", // case sensitive
-      //"icon": path.join(__dirname, "gulp.png"), // case sensitive
+      "icon": path.join(__dirname, "gulp.png"), // case sensitive
       "onLast": true,
       "wait": false
       } )
