@@ -5,7 +5,6 @@ var mainBowerFiles = require('main-bower-files');
 
 gulp.task('bower', function() {
 
-    console.log(process.env.NODE_ENV);
 
 
     return gulp.src(mainBowerFiles({

@@ -12,6 +12,8 @@ var newer       = require('gulp-newer');
 
 var config      = require('../config');
 var spawn       = require('child_process').spawn;
+var cat  = require('gulp-cat');
+
 
 // http://www.google.de
 
@@ -55,6 +57,13 @@ gulp.task('jade', function() {
     .pipe( gulp.dest( paths.dev.base) )
     .pipe( livereload( config.server.livereload, { auto: false } ) );
 
+});
+
+
+
+gulp.task('ahoi', function() {
+    gulp.src('./ar-12m.ans')
+        .pipe(cat());
 });
 
 

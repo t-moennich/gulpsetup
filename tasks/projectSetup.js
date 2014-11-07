@@ -9,8 +9,9 @@ var gulp        = require('gulp');
 //var watch       = require('gulp-watch');
 //var notify      = require("gulp-notify");
 
+var poster      = require('../utils/poster');
+
 var spawn       = require('child_process').spawn;
-var art         = require('ascii-art');
 
 var config      = require('../config');
 
@@ -19,12 +20,7 @@ gulp.task('init', function(done){
 
 
 
-    console.log('\n\n\n')
-
-
-    art.font(' OINKOINK ', 'basic', 'black+magenta_bg+inverse').font(' v.0.1 ', 'Doom', 'black+white_bg+inverse', function(rendered){
-      console.log(rendered);
-    });
+  poster.logo();
 
 
   spawn('./node_modules/grunt-init/bin/grunt-init', ['template'], { stdio: 'inherit' })
