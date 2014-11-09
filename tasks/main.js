@@ -61,12 +61,4 @@ gulp.task('jade', function() {
 
 
 
-gulp.task('ahoi', function() {
-    gulp.src('./ahoi.ans')
-        .pipe(cat());
-});
-
-
-
-
 //gulp.task('default', ['watch']);

@@ -33,6 +33,7 @@
     "gulp-sass": "~1.0.0",
     "gulp-sourcemaps": "~1.2.7",
     "gulp-watch": "~1.0.7",
+    "inquirer": "^0.8.0",
     "merge": "^1.2.0",
     "require-dir": "^0.1.0"
   },

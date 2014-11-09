@@ -16,8 +16,3 @@ gulp.task('default', ['browser-sync'], function () {
   gulp.watch( "../dev/jade/**/*.jade", ['jade']);
   gulp.watch( "../dev/sass/*.scss", ['scss']);
 });
-
-gulp.task('ttt', function () {
-  poster.sayWhat('Starting server...');
-
-});
