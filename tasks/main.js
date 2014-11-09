@@ -62,7 +62,7 @@ gulp.task('jade', function() {
 
 
 gulp.task('ahoi', function() {
-    gulp.src('./ar-12m.ans')
+    gulp.src('./ahoi.ans')
         .pipe(cat());
 });
 
