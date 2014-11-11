@@ -42,7 +42,7 @@ exports.template = function(grunt, init, done) {
 		grunt.file.mkdir('../app/_assets/modx/snippets');
 		grunt.file.mkdir('../app/_assets/modx/plugins');
 
-
+		console.log('Folder gemacht')
 
 		// Generate package.json file, used by npm and grunt.
 		init.writePackageJSON('../pimmel.json', {

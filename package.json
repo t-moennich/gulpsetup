@@ -2,14 +2,12 @@
   "name": "gulpsetup",
   "version": "0.0.1",
   "description": "a Gulp/Grunt based Dev Env",
-  "main": "gulpfile.js",
+  "main": "./bin/ahoi",
   "dependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/fokkerone/gulpsetup.git"
   },
-
-  "main": "./lib/main",
   "bin": {
     "ahoi": "./bin/ahoi"
   },
@@ -18,6 +16,7 @@
     "browser-sync": "~1.5.8",
     "cd": "~0.3.3",
     "cmd-exec": "~0.1.0",
+    "commander": "^2.5.0",
     "forever": "^0.13.0",
     "forever-monitor": "~1.5.1",
     "grunt": "~0.4.5",
@@ -44,7 +43,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node start.js"
+    "start": "node start.js",
+    "ahoi": "node ./bin/ahoi"
   },
   "author": "fokker One",
   "license": "MIT"
