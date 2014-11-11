@@ -29,7 +29,7 @@ poster.ahoi= function(done){
   //
 
   var helloImages = [
-    'speedy.png',
+    'jelly.png',
     'captain.gif',
 
     //'Bart-Unabridged-Gen-Bart-Patton-icon.png',

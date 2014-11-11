@@ -5,7 +5,7 @@ var spawn       = require('child_process').spawn;
 var config      = require('../config');
 
 
-gulp.task('init', function(done){
+gulp.task('setup', function(done){
 
 
 

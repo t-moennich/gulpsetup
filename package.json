@@ -8,6 +8,11 @@
     "type": "git",
     "url": "https://github.com/fokkerone/gulpsetup.git"
   },
+
+  "main": "./lib/main",
+  "bin": {
+    "ahoi": "./bin/ahoi"
+  },
   "devDependencies": {
     "ascii-art": "0.0.2-alpha",
     "browser-sync": "~1.5.8",
