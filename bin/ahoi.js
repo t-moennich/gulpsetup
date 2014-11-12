@@ -7,27 +7,32 @@ var poster      = require('../utils/poster')
 var spawn       = require('child_process').spawn;
 
 var _setup      = require('../lib/setup');
-var generator      = require('../lib/generator');
+var generator   = require('../lib/generator');
 
 var prg = function(){
   program
   .version('0.0.1')
-  .option('-d, --develop', 'Start Development Envoriment')
-  // .option('-b, --build', 'build App')
-  // .option('-n, --new', 'create new App')
-  // .option('-g, --generator', 'choose + run a generator')
-  .parse(process.argv);
+    .option('-d, --develop', 'Start Development Envoriment')
+    .option('-b, --build', 'build App')
+    .option('-n, --new', 'create new App')
+    .option('-g, --generator', 'choose + run a generator')
+    .parse(process.argv);
 
-  console.log( program )  ;
+  // TODOS
+
   if (program.develop) console.log('  - develop');
   if (program.build) console.log('  - build');
   if (program.new) console.log('  - new');
   if (program.generator) generator.init();
 
+  if(!program.rawArgs[2] && !program.args.length ) poster.ahoi( widget );
 }
 
 
-var guided = function(){
+var widget = function(){
+  console.log("##################### HOWDY, COMMANDS #################################")
+  program.outputHelp();
+  console.log("### # ####     ## ### # ## ### ### ## #### #### ####### #### ##### ####")
   var _choices = [
     "Start Development",
     "Build App",

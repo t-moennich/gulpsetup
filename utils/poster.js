@@ -1,5 +1,5 @@
 var art         = require('ascii-art');
-var spawn        = require('child_process').spawn,
+var chpr       = require('child_process');
 
 poster = { }
 poster.logo= function(){
@@ -28,17 +28,22 @@ poster.ahoi= function(done){
   //
   //
 
+
   var helloImages = [
     'jelly.png',
-    'captain.gif',
-
-    //'Bart-Unabridged-Gen-Bart-Patton-icon.png',
-
+    'captain.gif'
   ];
-  spawn('img-cat', [ helloImages[Math.floor(Math.random()*helloImages.length)] ], { stdio: 'inherit' })
-    .on('close', done);
 
+  child = chpr.exec('node ./node_modules/img-cat/main ' + helloImages[Math.floor(Math.random()*helloImages.length)],
+  function (error, stdout, stderr) {
 
+    console.log(stdout.split(']')[1])
+
+    if (error !== null) {
+      console.log('exec error: ' + error);
+    }
+    done();
+  })
 }
 
 poster.sayWhat= function(phrase){
@@ -49,7 +54,6 @@ poster.sayWhat= function(phrase){
     art.font( phrase.toString(), 'utopia', 'yellow', function(rendered){
       console.log(rendered);
     });
-
 }
 
 module.exports = poster;
