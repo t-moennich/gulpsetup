@@ -47,11 +47,9 @@ var originalConfig = {
 }
 
 
-
-
-
-if (fs.existsSync('../config.js')){
+if (fs.existsSync('../config.json')){
   localConfig = require('../config')
+  console.log( merge.recursive(true, originalConfig, localConfig ))
   module.exports = merge.recursive(true, originalConfig, localConfig )
 }else{
   module.exports = originalConfig;

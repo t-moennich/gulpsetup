@@ -1,39 +1,65 @@
 #!/usr/bin/env node
+"use strict";
 
-var commander    = require('commander');
-var createMenu  = require('terminal-menu')
-var builder     = require("terminal-menu-program"),
-    program     = new builder.Program("Test program")
+var inquirer    = require("inquirer");
+var program     = require('commander');
+var poster      = require('./utils/poster')
+var spawn       = require('child_process').spawn;
 
-commander
+var _setup      = require('./lib/setup');
+var generator   = require('./lib/generator');
+
+var prg = function(){
+  program
   .version('0.0.1')
-  .option('-p, --peppers', 'Add peppers')
-  .option('-P, --pineapple', 'Add pineapple')
-  .option('-b, --bbq', 'Add bbq sauce')
-  .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
-  .parse(process.argv);
+    .option('-d, --develop', 'Start Development Envoriment')
+    .option('-b, --build', 'build App')
+    .option('-n, --new', 'create new App')
+    .option('-g, --generator', 'choose + run a generator')
+    .parse(process.argv);
 
-console.log('you ordered a pizza with:');
-if (commander.peppers) console.log('  - peppers');
-if (commander.pineapple) console.log('  - pineapple');
-if (commander.bbq) console.log('  - bbq');
+  // TODOS
+
+  if (program.develop) console.log('  - develop');
+  if (program.build) console.log('  - build');
+  if (program.new) console.log('  - new');
+  if (program.generator) generator.init( program.args[0] );
+
+  if(!program.rawArgs[2] && !program.args.length ) poster.ahoi( widget );
+}
 
 
-// preamble
+var widget = function(){
+  console.log("##################### HOWDY, COMMANDS #################################")
+  program.outputHelp();
+  console.log("### # ####     ## ### # ## ### ### ## #### #### ####### #### ##### ####")
+  var _choices = [
+    "Start Development",
+    "Build App",
+    new inquirer.Separator(),
+    "Setup new App",
+    "Quit",
+  ];
 
+  inquirer.prompt([
+    {
+      type: "list",
+      name: "choice",
+      message: "What do you want to do?",
+      choices: _choices
+    }
+  ], function( answers ) {
 
+      switch (answers.choice) {
+      case 'Setup new App':
+        _setup.init();
+        break;
+      case 'Quit':
+        break;
+      default:
+        //console.log('default')
+      }
+  });
+}
 
-// single screen definition
-menu = program.menu("main");
-menu.text("A Terminal Menu Program");
-menu.spacer();
-menu.option("menu switch (going to this screen when selected)", "main");
-menu.spacer();
-menu.check("a toggle option", function(state) { /* ... */ });
-menu.check("a checked toggle option", true);
-menu.check("a checked toggle callback", true, function(state) { /* ... */ });
-menu.spacer();
-menu.cancel("exit", function() { program.halt(); process.exit(0); });
-
-// run single screen program
-program.run("main");
+prg();

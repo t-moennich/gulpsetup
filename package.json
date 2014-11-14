@@ -1,15 +1,15 @@
 {
-  "name": "gulpsetup",
+  "name": "ahoi",
   "version": "0.0.1",
   "description": "a Gulp/Grunt based Dev Env",
-  "main": "./bin/ahoi",
+  "main": "./ahoi",
   "dependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/fokkerone/gulpsetup.git"
   },
   "bin": {
-    "ahoi": "./bin/ahoi"
+    "ahoi": "./ahoi"
   },
   "devDependencies": {
     "ascii-art": "0.0.2-alpha",

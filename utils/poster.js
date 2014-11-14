@@ -1,5 +1,7 @@
 var art         = require('ascii-art');
-var chpr       = require('child_process');
+var chpr        = require('child_process');
+var path        = require('path');
+var appDir = path.dirname(require.main.filename);
 
 poster = { }
 poster.logo= function(){
@@ -14,30 +16,17 @@ poster.logo= function(){
 
 poster.ahoi= function(done){
 
-  // ps    = spawn('cat', ['./captain.ansi'])
-  // //cat('./captain.ansi', console.log);             // reads the file as utf-8 and returns it output
-  // ps.on('close', function (code) {
-  //   if (code !== 0) {
-  //     console.log('ps process exited with code ' + code);
-  //   }
-  // });
-  //
-  // ps.stdout.on('data', function (data) {
-  //   console.log(data);
-  // });
-  //
-  //
-
 
   var helloImages = [
     'jelly.png',
     'captain.gif'
   ];
 
-  child = chpr.exec('node ./node_modules/img-cat/main ' + helloImages[Math.floor(Math.random()*helloImages.length)],
-  function (error, stdout, stderr) {
 
-    console.log(stdout.split(']')[1])
+
+  child = chpr.exec('node ' + appDir + '/node_modules/img-cat/main ' + appDir + '/' + helloImages[Math.floor(Math.random()*helloImages.length)],
+  function (error, stdout, stderr) {
+    console.log(stdout)
 
     if (error !== null) {
       console.log('exec error: ' + error);
