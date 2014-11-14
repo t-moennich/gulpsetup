@@ -19,7 +19,9 @@ poster.ahoi= function(done){
 
   var helloImages = [
     'jelly.png',
-    'captain.gif'
+    'captain.gif',
+    'sailor.png',
+    'homerfish.png'
   ];
 
 
@@ -46,8 +48,3 @@ poster.sayWhat= function(phrase){
 }
 
 module.exports = poster;
-
-
-//times
-// thin
-// rev

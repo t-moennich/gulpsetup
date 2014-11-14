@@ -6,8 +6,8 @@ var program     = require('commander');
 var poster      = require('./utils/poster')
 var spawn       = require('child_process').spawn;
 
-var _setup      = require('./lib/setup');
 var generator   = require('./lib/generator');
+var developer   = require('./lib/developer');
 
 var prg = function(){
   program
@@ -20,7 +20,7 @@ var prg = function(){
 
   // TODOS
 
-  if (program.develop) console.log('  - develop');
+  if (program.develop) developer.init( );
   if (program.build) console.log('  - build');
   if (program.new) console.log('  - new');
   if (program.generator) generator.init( program.args[0] );
@@ -61,5 +61,8 @@ var widget = function(){
       }
   });
 }
+
+
+
 
 prg();
