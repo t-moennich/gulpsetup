@@ -1,0 +1,41 @@
+#probefahrtform4
+  .col-sm-12
+    h4 Wir möchten Sie perfekt bertreuen
+    p
+      | Daher würden wir uns sehr freuen, wenn Sie uns die Möglichkeit geben, Sie per Telefon oder E-Mail zu kontaktieren:
+
+  .col-sm-12
+    .checkbox
+      label
+        input(id="privacy", type="checkbox", name="privacy", value="privacy").small
+        | Ich bin damit einverstanden, dass meine angegebenen personenbezogenen Daten von der Kia Motors Deutschland GmbH zum Zwecke meiner weiteren individuellen Betreuung, der Zusendung von Produktinformationen und Serviceangeboten sowie der Befragung über die Zufriedenheit rund um die Marke Kia gespeichert, verarbeitet und genutzt und an den für mich zuständigen Kia Händler übermittelt und auch dort zu diesen Zwecken gespeichert, verarbeitet und genutzt werden dürfen (optional).*
+
+  .col-sm-12
+    .checkbox
+      label
+        input#privacy_phone.small(type='checkbox', name='privacy-telefon', value='privacy-telefon')
+        | Ich bin auch damit einverstanden, hierzu per Telefon angesprochen zu werden.
+
+      input#phone2.form-control(type='text', value='')
+  .col-sm-12
+    .checkbox
+      label
+        input#privacy_mail.small(type='checkbox', name='privacy-mail', value='privacy-mail')
+        | Ich bin auch damit einverstanden, hierzu per E-Mail angesprochen zu werden.
+
+      input#email.form-control(type='text', value='')
+
+  .col-sm-12
+    .checkbox
+      label
+        input#privacy_sms.small(type='checkbox', name='privacy-sms', value='privacy-sms')
+        | Ich bin auch damit einverstanden, hierzu per SMS/MMS angesprochen zu werden.
+
+      input#sms.form-control(type='text', value='')
+
+
+  .col-sm-12
+    p.small
+      *) Die Abgabe dieser Einwilligungserklärung ist freiwillig. Sie können Ihre Einwilligung jederzeit gegenüber der Kia Motors Deutschland GmbH, Theodor-Heuss-Allee 11, 60486 Frankfurt am Main, E-Mail: datenschutz@kia.de ändern oder ganz oder teilweise widerrufen und der Verarbeitung oder Nutzung der Daten für Zwecke der Werbung oder der Markt- oder Meinungsforschung jederzeit widersprechen. Weitere Informationen erhalten Sie online unter http://www.kia.com/de/Informationen/Rechtliches oder beim Kia Service Center unter 0800 777 30 44 (kostenfrei im Festnetz der T-Com, ggf. andere Mobilfunkpreise).
+
+button#probefahrtform4_submit.btn.btn-huge.btn-info Daten abschicken

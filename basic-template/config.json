@@ -1,0 +1,39 @@
+{
+  "server": {
+    "livereload": 35728,
+
+    "development": {
+      "src":  "../dev",
+      "server": {
+        "baseDir": ["../app"]
+      },
+      "port"    : 9999,
+      "open"    : false,
+      "notify"  : false,
+      "paths"   : {
+        "production" : "../app",
+        "assets": "assets"
+      },
+
+      "files": [
+      "/css/*.css",
+      "/js/*.js",
+      "/images/**",
+      "/fonts/*"
+      ]
+    }
+  }
+
+  ,"sass": {
+
+    "src":  "/sass/*.{sass,scss}",
+    "dest": "/css",
+    "options": {
+      "noCache": true,
+      "compass": false,
+      "bundleExec": false,
+      "sourcemap": true,
+      "sourcemapPath": "./maps"
+    }
+  }
+}

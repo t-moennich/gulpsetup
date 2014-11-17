@@ -1,0 +1,60 @@
+.col-sm-12
+  label Modellwahl
+  select#modellselectdropdown.form-control
+    option(value="") -- Bitte ein Modell wählen --
+    option(value="picanto") Kia Picanto DREAM-TEAM Edition
+    option(value="rio") Kia Rio DREAM-TEAM Edition
+    option(value="ceed") Kia cee’d DREAM-TEAM Edition
+    option(value="ceedsw") Kia cee’d Sportswagon DREAM-TEAM Edition
+    option(value="venga") Kia Venga FIFA World Cup ™ Edition
+    option(value="sportage") Kia Sportage DREAM-TEAM  Edition
+    option(value="carens") Kia Carens DREAM-TEAM Edition
+    option(value="sportage") Kia Soul
+    option(value="carens") Kia Sorento
+    option(value="optima") Kia Optima
+    option(value="ceedgt") Kia Cee´d GT
+
+
+.col-sm-12.form-inline#gender
+  .form-group
+    label(for="p_anrede_herr") Anrede
+  .form-group
+    .radio
+      label(for="p_anrede_herr")
+        input#salutationm(type="radio", value="m", name="salutation")
+        | Herr
+  .form-group
+    .radio
+      label(for="p_anrede_frau")
+        input#salutationf(type="radio", value="m", name="salutation")
+        | Frau
+
+.col-sm-6
+  .form-group
+    label Vorname
+    input.form-control#firstname(type='text')
+
+.col-sm-6
+  .form-group
+    label Nachname
+    input.form-control#surname(type='text')
+
+.col-sm-6.form-inline
+    .form-group
+      label Straße & Nr.
+      .input-group
+        input.form-control#street(type='text', style="width:80%")
+        input.form-control#street_nr(type='text', style="width:20%")
+
+.col-sm-6.form-inline
+  .form-group
+    label PLZ & Ort
+    .input-group
+      input.form-control#postal_code(type='text',  style="width:30%")
+      input.form-control#city(type='text',  style="width:70%")
+.col-sm-6
+  .form-group
+    label Telefon
+    input.form-control#phone(type='text')
+
+button.btn.btn-huge.btn-info Weiter

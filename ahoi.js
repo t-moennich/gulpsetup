@@ -20,11 +20,10 @@ var prg = function(){
 
   // TODOS
 
-  if (program.develop) developer.init( );
+  if (program.develop) developer.init();
   if (program.build) console.log('  - build');
   if (program.new) console.log('  - new');
-  if (program.generator) generator.init( program.args[0] );
-
+  if (program.generator) generator.init( program.args[0] )
   if(!program.rawArgs[2] && !program.args.length ) poster.ahoi( widget );
 }
 
@@ -55,6 +54,10 @@ var widget = function(){
         _setup.init();
         break;
       case 'Quit':
+        break;
+
+      case 'Start Development':
+        developer.init( );
         break;
       default:
         //console.log('default')
