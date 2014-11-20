@@ -1,14 +1,14 @@
 'use strict';
 var path = require('path');
 
-var Generator         = path.dirname(require.main.filename);
+var generator         = "";
 var appDir   			    = process.cwd();
 var fs           		 	= require('fs');
 var jf            		= require('jsonfile');
 var merge							= require('merge');
-var generatorconfig		= require(__dirname +'/config.json');
+var generatorconfig		= require( __dirname +'/config.json');
 
-//console.log (__dirname, "appDir: " + appDir);
+
 
 // Basic template description.
 
@@ -29,19 +29,27 @@ exports.after = 'You should now install project dependencies with _npm ' +
 
 exports.template = function(grunt, init, done) {
 
-	//console.log("g:" +  grunt )
-	//console.log("init:" +  init )
-	//console.log("done:" +  done );
-	var _done = done;
 
-	init.process({}, [
+	var _done = done;
+	var self = this;
+	var localConfig;
+
+	var frage = [
 		// Prompt for these values.
 		init.prompt('name'),
 		init.prompt('title'),
 		init.prompt('description'),
 		init.prompt('version'),
+	]
 
-	], function(err, props) {
+	// for(var i in generatorconfig){
+	// 	frage.push(init.prompt( i ))
+	// }
+
+	init.process({}, frage
+
+
+	, function(err, props) {
 		// Files to copy (and process).
 		var files = init.filesToCopy(props,{noProcess: 'dev/**'});
 		var config  = {
@@ -51,9 +59,7 @@ exports.template = function(grunt, init, done) {
 			version: props.version
 		}
 
-		var self = this;
-		var localConfig;
-		console.log(files)
+
 
 		// Actually copy (and process) files.
 		init.copyAndProcess(files, props);
@@ -94,17 +100,17 @@ exports.template = function(grunt, init, done) {
 			"main-bower-files": "~2.4.0"
     };
 
-		init.writePackageJSON('./ahois/package.json', props);
+		init.writePackageJSON( 'package.json', props);
 
 		// WRITE OR MERGE CONFIG FILE
 		if (fs.existsSync(appDir + '/config.json')){
-			console.log('true config')
 			localConfig = require(appDir + '/config.json')
-			config =  merge.recursive(true, config, localConfig )
+			config =  merge.recursive(true, props, localConfig )
 		}
+
 		config =  merge.recursive(true, config, generatorconfig )
-		jf.writeFile( './ahois/config.json', config, function(err) {
-				done()
+		jf.writeFile( appDir + '/config.json', config, function(err) {
+			done();
 		})
 	});
 };

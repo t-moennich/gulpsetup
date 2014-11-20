@@ -1,0 +1,35 @@
+{
+  "name": "app",
+  "version": "0.0.0",
+  "authors": [
+    "fokkerone <vk@thisplay.de>"
+  ],
+  "description": "nope",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "bootstrap": "~3.3.0"
+  },
+
+  /* Select Files you want */
+
+  "overrides":{
+    "jquery":{
+      "main":{
+        "dev": ["./dist/jquery.min.js", "./dist/jquery.min.map"]
+      }
+    },
+    "bootstrap":{
+      "main":{
+        "dev": ["./dist/js/bootstrap.js"]
+      }
+    }
+  }
+}
