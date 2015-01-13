@@ -27,7 +27,7 @@
   ,"sass": {
 
     "src":  "../dev/sass/*.{sass,scss}",
-    "dest": "/app/_assets/css",
+    "dest": "../app/_assets/css",
     "options": {
       "noCache": true,
       "compass": false,

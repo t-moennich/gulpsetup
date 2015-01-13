@@ -29,12 +29,11 @@ exports.after = 'You should now install project dependencies with _npm ' +
 
 exports.template = function(grunt, init, done) {
 
-
 	var _done = done;
 	var self = this;
 	var localConfig;
 
-	var frage = [
+	var fragen = [
 		// Prompt for these values.
 		init.prompt('name'),
 		init.prompt('title'),
@@ -46,7 +45,7 @@ exports.template = function(grunt, init, done) {
 	// 	frage.push(init.prompt( i ))
 	// }
 
-	init.process({}, frage
+	init.process({}, fragen
 
 
 	, function(err, props) {
@@ -59,8 +58,6 @@ exports.template = function(grunt, init, done) {
 			version: props.version
 		}
 
-
-
 		// Actually copy (and process) files.
 		init.copyAndProcess(files, props);
 
@@ -70,10 +67,6 @@ exports.template = function(grunt, init, done) {
 		grunt.file.mkdir(appDir + '/app/_assets/js/vendor');
 		grunt.file.mkdir(appDir + '/app/_assets/js/plugins');
 		grunt.file.mkdir(appDir + '/app/_assets/js/src-map');
-		grunt.file.mkdir(appDir + '/app/_assets/modx');
-		grunt.file.mkdir(appDir + '/app/_assets/modx/chunks');
-		grunt.file.mkdir(appDir + '/app/_assets/modx/snippets');
-		grunt.file.mkdir(appDir + '/app/_assets/modx/plugins');
 
 		props.devDependencies = {
 			"browser-sync": "~1.5.8",

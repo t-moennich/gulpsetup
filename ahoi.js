@@ -8,6 +8,7 @@ var spawn       = require('child_process').spawn;
 
 var generator   = require('./lib/generator');
 var developer   = require('./lib/developer');
+var runner      = require('./lib/runner');
 
 var prg = function(){
   program
@@ -15,6 +16,7 @@ var prg = function(){
     .option('-d, --develop', 'Start Development Envoriment')
     .option('-b, --build', 'build App')
     .option('-n, --new', 'create new App')
+    .option('-s, --start', 'start App')
     .option('-g, --generator', 'choose + run a generator')
     .parse(process.argv);
 
@@ -23,6 +25,7 @@ var prg = function(){
   if (program.develop) developer.init();
   if (program.build) console.log('  - build');
   if (program.new) console.log('  - new');
+  if (program.start) //runner.init();
   if (program.generator) generator.init( program.args[0] )
   if(!program.rawArgs[2] && !program.args.length ) poster.ahoi( widget );
 }
