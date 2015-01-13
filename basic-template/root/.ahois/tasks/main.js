@@ -1,5 +1,3 @@
-console.log (Pathsen)
-
 var gulp        = require('gulp');
 var plumber     = require('gulp-plumber');
 var path        = require('path');
@@ -11,8 +9,8 @@ var watch       = require('gulp-watch');
 var notify      = require("gulp-notify");
 var connect     = require('gulp-connect');
 var newer       = require('gulp-newer');
-
 var config      = require('../../config');
+
 
 
 // http://www.google.de
