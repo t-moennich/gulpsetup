@@ -1,0 +1,6 @@
+{
+  "directory": "../dev/bower-components/",
+  "analytics": false,
+  "timeout": 120000,
+
+}

@@ -25,7 +25,7 @@ var prg = function(){
   if (program.develop) developer.init();
   if (program.build) console.log('  - build');
   if (program.new) console.log('  - new');
-  if (program.start) //runner.init();
+  if (program.start) console.log('  - start');
   if (program.generator) generator.init( program.args[0] )
   if(!program.rawArgs[2] && !program.args.length ) poster.ahoi( widget );
 }
@@ -37,6 +37,7 @@ var widget = function(){
   console.log("### # ####     ## ### # ## ### ### ## #### #### ####### #### ##### ####")
   var _choices = [
     "Start Development",
+    "Bower",
     "Build App",
     new inquirer.Separator(),
     "Setup new App",
@@ -54,13 +55,16 @@ var widget = function(){
 
       switch (answers.choice) {
       case 'Setup new App':
-        _setup.init();
+        console.log('list available Generators')
         break;
       case 'Quit':
         break;
 
       case 'Start Development':
         developer.init( );
+        break;
+      case 'Bower':
+        developer.bower();
         break;
       default:
         //console.log('default')
