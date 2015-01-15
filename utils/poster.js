@@ -1,7 +1,7 @@
-var art         = require('ascii-art');
-var chpr        = require('child_process');
-var path        = require('path');
-var appDir = path.dirname(require.main.filename);
+var art       = require('ascii-art');
+var chpr      = require('child_process');
+var path      = require('path');
+var appDir    = path.dirname(require.main.filename);
 
 poster = { }
 poster.logo= function(){

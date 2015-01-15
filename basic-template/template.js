@@ -9,9 +9,8 @@ var merge							= require('merge');
 var generatorconfig		= require( __dirname +'/config.json');
 
 
-
+////////////////////////////////////////////////////////
 // Basic template description.
-
 
 exports.notes = "AHOI BASIC TEMPLATE";
 // Template-specific notes to be displayed after question prompts.

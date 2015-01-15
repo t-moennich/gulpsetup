@@ -11,8 +11,6 @@ var connect     = require('gulp-connect');
 var newer       = require('gulp-newer');
 var config      = require('../../config');
 
-
-
 // http://www.google.de
 
 var paths = {
@@ -28,6 +26,7 @@ var paths = {
 gulp.task('jade', function() {
   var YOUR_LOCALS = {
     debug: true,
+    conf: config, 
     livereload: config.server.livereload
   };
 
