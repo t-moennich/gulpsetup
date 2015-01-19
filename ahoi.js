@@ -9,6 +9,7 @@ var spawn       = require('child_process').spawn;
 var generator   = require('./lib/generator');
 var developer   = require('./lib/developer');
 var runner      = require('./lib/runner');
+var questioner  = require('./lib/questioner');
 
 var prg = function(){
   program
@@ -20,6 +21,8 @@ var prg = function(){
     .option('-g, --generator', 'choose + run a generator')
     .parse(process.argv);
 
+
+  //////////////////////////////////////////////////////
   // TODOS
 
   if (program.develop) developer.init();
@@ -64,7 +67,7 @@ var widget = function(){
         developer.init( );
         break;
       case 'Bower':
-        developer.bower();
+        questioner.bower();
         break;
       default:
         //console.log('default')
