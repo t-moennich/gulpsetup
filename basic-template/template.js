@@ -79,7 +79,7 @@ exports.template = function(grunt, init, done) {
 			"gulp-connect": "~2.0.6",
 			"gulp-csslint": "~0.1.5",
 			"gulp-filter": "~1.0.2",
-			"gulp-jade": "~0.8.0",
+			"gulp-jade": "~0.11.0",
 			"gulp-jade-find-affected": "^0.1.3",
 			"gulp-livereload": "~2.1.1",
 			"gulp-newer": "^0.3.0",
@@ -89,7 +89,9 @@ exports.template = function(grunt, init, done) {
 			"gulp-sourcemaps": "~1.2.7",
 			"gulp-watch": "~1.0.7",
 			"require-dir": "^0.1.0",
-			"main-bower-files": "~2.4.0"
+			"main-bower-files": "~2.4.0",
+			"jsmart": "~2.14.0",
+			"jade": "~1.9.1"
     };
 
 		init.writePackageJSON( 'package.json', props);

@@ -5,7 +5,6 @@ var appDir    = path.dirname(require.main.filename);
 
 poster = { }
 poster.logo= function(){
-
     console.log('\n\n\n')
 
     art.font(' OINKOINK ', 'basic', 'black+magenta_bg+inverse').font(' v.0.1 ', 'Doom', 'black+white_bg+inverse', function(rendered){
@@ -14,15 +13,13 @@ poster.logo= function(){
 
 }
 
-poster.ahoi= function(done){
-
+poster.ahoi= function( done ){
 
   var helloImages = [
     'jelly.png',
     'captain.gif',
-    'sailor.png',
-    'homerfish.png'
-  ];
+    'sailor.png'
+   ];
 
 
 

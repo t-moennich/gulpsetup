@@ -13,49 +13,14 @@ var config      = require('../../config');
 
 // http://www.google.de
 
-var paths = {
-  sass: '../dev/sass/*.scss',
-  jade: '../dev/jade/*.jade',
-  dev: {
-    base: '../app',
-    styles: '../app/css'
-  }
-};
-
-
-gulp.task('jade', function() {
-  var YOUR_LOCALS = {
-    debug: true,
-    conf: config, 
-    livereload: config.server.livereload
-  };
-
-
-  gulp.src(paths.jade)
-
-    .pipe( newer( paths.dev.base ) )
-    .pipe( affected() )
-
-    .pipe( plumber( {errorHandler: notify.onError( {
-      "title": "OINKOINK",
-      "subtitle": "JADE BUG",
-      "message": "Error: <%= error.message %>",
-      "sound": "oink", // case sensitive
-      "icon": path.join(__dirname, "gulp.png"), // case sensitive
-      "onLast": true,
-      "wait": false
-      } )
-    } ) )
-    .pipe( jade( {
-      locals: YOUR_LOCALS,
-      pretty: true
-    } ) )
-
-    .pipe( gulp.dest( paths.dev.base) )
-    .pipe( livereload( config.server.livereload, { auto: false } ) );
-
-});
-
+// var paths = {
+//   sass: '../dev/sass/*.scss',
+//   jade: '../dev/jade/*.jade',
+//   dev: {
+//     base: '../app',
+//     styles: '../app/css'
+//   }
+// };
 
 
 //gulp.task('default', ['watch']);

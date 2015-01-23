@@ -11,7 +11,7 @@ var developer   = require('./lib/developer');
 var runner      = require('./lib/runner');
 var questioner  = require('./lib/questioner');
 
-var prg = function(){
+var commanderOptions = function(){
   program
   .version('0.0.1')
     .option('-d, --develop', 'Start Development Envoriment')
@@ -32,6 +32,7 @@ var prg = function(){
   if (program.generator) generator.init( program.args[0] )
   if(!program.rawArgs[2] && !program.args.length ) poster.ahoi( widget );
 }
+
 
 
 var widget = function(){
@@ -75,7 +76,4 @@ var widget = function(){
   });
 }
 
-
-
-
-prg();
+commanderOptions();

@@ -47,7 +47,7 @@ gulp.task('scss', function () {
 
    return gulp.src( config.sass.src )
       .pipe(plumber({errorHandler: notify.onError({
-        "title": "OINKOINK",
+        "title": "AHOY!!",
         "subtitle": "SCSS Problem",
         "message": "Error: <%= error.message %>",
         "sound": "oink", // case sensitive

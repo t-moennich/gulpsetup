@@ -24,6 +24,11 @@
     }
   }
 
+  ,"jade": {
+    "src":  "../dev/jade/*.jade",
+    "dest": "../app"
+  }
+
   ,"sass": {
 
     "src":  "../dev/sass/*.{sass,scss}",
