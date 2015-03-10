@@ -1,0 +1,22 @@
+{
+  "name": "basic-template",
+  "version": "0.0.0",
+  "homepage": "https://github.com/fokkerone/gulpsetup",
+  "authors": [
+    "fokkerone <vk@thisplay.de>"
+  ],
+  "description": "nope",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "dev/vendors/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "twitter-bootstrap-sass": "~3.3.3"
+  }
+}

@@ -19,6 +19,7 @@ var commanderOptions = function(){
     .option('-n, --new', 'create new App')
     .option('-s, --start', 'start App')
     .option('-g, --generator', 'choose + run a generator')
+    .option('-u, --update', 'update a generator')
     .parse(process.argv);
 
 
@@ -30,6 +31,7 @@ var commanderOptions = function(){
   if (program.new) console.log('  - new');
   if (program.start) console.log('  - start');
   if (program.generator) generator.init( program.args[0] )
+  if (program.update) console.log("Udpate: TBD")
   if(!program.rawArgs[2] && !program.args.length ) poster.ahoi( widget );
 }
 
