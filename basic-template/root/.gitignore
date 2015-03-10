@@ -1,3 +1,29 @@
-node_modules
+# OS generated files
+####################
+
+# Mac OS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+.Spotlight-V100
+.Trashes
+
+
+# IDE files
+###########
+
+# PhpStorm
+.idea/
+
+
+# Dev and temp files
+####################
+/.ahois
+/app
+/node_modules
 dev-www
-.ahoi
+
+
+# Other files
+#############
